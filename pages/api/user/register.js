@@ -4,7 +4,7 @@ import { checkToken } from "../../../backendLibs/checkToken";
 
 export default function userRegisterRoute(req, res) {
   if (req.method === "POST") {
-    const { username, password, isAdmin } = JSON.parse(req.body);
+    const { username, password, isAdmin } = req.body;
 
     //if we try to add admin account
     //but token is not admin or token is not attached with request at all

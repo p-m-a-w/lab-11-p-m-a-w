@@ -4,7 +4,7 @@ import bcrypt from "bcrypt";
 
 export default function login(req, res) {
   if (req.method === "POST") {
-    const { username, password } = JSON.parse(req.body);
+    const { username, password } = req.body;
 
     if (typeof username !== 'string' || typeof password !== 'string' || username.length === 0 || password.length === 0)
       return res.status(400).json({ ok: false, message: 'Username or password cannot be empty' })
